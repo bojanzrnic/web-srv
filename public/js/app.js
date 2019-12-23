@@ -1,0 +1,1 @@
+console.log('klijent JS fajl učitan')
