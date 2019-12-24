@@ -15,22 +15,32 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.get('', (req, res) => {
   res.render('index', {
     title: "Weather Applikac",
-    name: "Bojan"
+    name: "Bojan Zrnić"
   })
 });
 
 app.get('/about', (req, res) => {
   res.render('about', {
-    title: "Weather Applikac",
-    name: "Bojan"
+    title: "About Weather Applikac",
+    name:  "Bojan Zrnić"
   })
 })
 
 app.get('/help', (req, res) => {
   res.render('help', {
-    message: "help tehts tsghek doajh aoih ahd a"
+    message: "help tehts tsghek doajh aoih ahd a",
+    title: "Help Weather Applikac",
+    name:  "Bojan Zrnić"
   })
 })
+
+app.get('*', (req, res) => {
+  console.log(req.baseUrl)
+  res.render('error404', {
+    porukaGreska: req.baseUrl
+  })
+})
+
 
 const port = process.env.PORT || 3000;
 
