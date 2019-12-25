@@ -21,7 +21,7 @@ app.get('', (req, res) => {
 
 app.get('/about', (req, res) => {
   res.render('about', {
-    title: "About Weather Applikac",
+    title: "About Weather",
     name:  "Bojan Zrnić"
   })
 })
@@ -29,18 +29,22 @@ app.get('/about', (req, res) => {
 app.get('/help', (req, res) => {
   res.render('help', {
     message: "help tehts tsghek doajh aoih ahd a",
-    title: "Help Weather Applikac",
+    title: "Help Weather",
     name:  "Bojan Zrnić"
   })
 })
 
 app.get('*', (req, res) => {
-  console.log(req.baseUrl)
   res.render('error404', {
-    porukaGreska: req.baseUrl
+    greska: "Greška na starnici 404"
   })
 })
 
+app.get('/helo/*', (req, res) => {
+  res.render('error404', {
+    greska: "Help tema nije pronađena"
+  })
+})
 
 const port = process.env.PORT || 3000;
 
