@@ -26,6 +26,20 @@ app.get('/about', (req, res) => {
   })
 })
 
+app.get('/weather', (req, res) => {
+  if(!req.query.address) {
+    return res.send({
+      error: "Moraš poslati adresu"
+    })
+  };
+  res.send({
+    title: "About Weather",
+    name:  "Bojan Zrnić",
+    adress: req.query.address
+  })
+});
+
+
 app.get('/help', (req, res) => {
   res.render('help', {
     message: "help tehts tsghek doajh aoih ahd a",
