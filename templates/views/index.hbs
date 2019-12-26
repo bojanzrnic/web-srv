@@ -1,21 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html>
+
 <head>
-  <link rel="stylesheet" href="/css/styles.css">
-  <link rel="icon" href="/img/weather.png">
-  <script src="/js/app.js"></script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+    <title>Weather</title>
+    <link rel="icon" href="/img/weather.png">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
+
 <body>
     <div class="main-content">
         {{>header}}
 
-        <p>Use this site to get your weather!</p>
+        <p>Koristi pretraživač da provjeriš vrijeme!</p>
+
+        <form>
+            <input placeholder="Location">
+            <button>Search</button>
+        </form>
+
+        <p id="poruka1"></p>
+        <p id="poruka2"></p>
+
     </div>
 
     {{>footer}}
+
+    <script src="/js/app.js"></script>
 </body>
+
 </html>
